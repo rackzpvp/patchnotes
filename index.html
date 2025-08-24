@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patch Notes – Rackz PvP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0a0f0d, #1c1f1a, #0a0f0d);
+      font-family: "Segoe UI", sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+    .title-text {
+      color: #4ade80; /* Vert clair */
+      text-shadow: 0 0 8px rgba(34,197,94,0.6);
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      backdrop-filter: blur(12px);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 0.8s forwards;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 20px rgba(74,222,128,0.4);
+    }
+    @keyframes fadeUp {
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall 5s linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-10px) scale(0.5); opacity: 1; }
+      100% { transform: translateY(100vh) scale(1.2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particules -->
+  <div id="particles"></div>
+
+  <!-- Header -->
+  <header class="text-center p-10 bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-300 shadow-xl">
+    <h1 class="text-5xl font-extrabold title-text">💰 Patch Notes – Rackz PvP ⚔️</h1>
+    <p class="text-lg mt-2 text-green-100">Découvrez les dernières mises à jour du serveur</p>
+  </header>
+
+  <!-- Patch Note Unique -->
+  <main class="max-w-5xl mx-auto p-6">
+    <div class="card border border-green-500/40">
+      <h2 class="text-3xl font-bold title-text mb-4">🚀 Patch Note - Lancement Officiel de RACKZ PVP !</h2>
+      <p class="mb-4">🎮 Serveur PvP en <b>1.20.4</b> - Thème : <b>LE PVP ET L'ARGENT !</b> 💰⚔️<br>
+      Bienvenue sur <b>RACKZ PVP</b>, un serveur arène PvP type 1.8 dans une ambiance où chaque kill te rend plus riche 💵 !</p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li>⚠️ Serveur hébergé via Minefort (peut causer quelques lags)</li>
+        <li>⚔️ Mode de Jeu : <b>1 kill = 50 Rackzz 🪙</b></li>
+        <li>🛒 Utilise tes Rackzz dans un <b>shop</b> pour acheter du stuff puissant !</li>
+        <li>PvP fluide, rapide et tactique</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-6 title-text">🎁 7 KITS DE DÉPART GRATUITS 🎁</h3>
+      <p class="italic">Cooldown : 3 heures par kit</p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Kit Guerrier – Épée en fer, Hache en fer, Armure en fer complète</li>
+        <li>Kit Archer – Arc, 32 flèches, Armure en cuir</li>
+        <li>Kit Assassin – Épée en diamant, Armure en cuir</li>
+        <li>Kit Tank – Épée en diamant, Armure en fer</li>
+        <li>Kit Mage – Épée en fer (knockback), 3 potions de dégâts, Armure cuir</li>
+        <li>Kit Berserker – Épée diamant, Armure fer partielle, 2 pommes dorées</li>
+        <li>Kit Hybride – Épée fer, Armure fer, Arc + 16 flèches</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-6 title-text">🛒 SHOP EN JEU</h3>
+      <p>Échange tes Rackzz contre du stuff 🔥</p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>💎 <b>LÉGENDAIRE :</b> Trident Foudre ⚡, 6 Pommes de Notch 🍏, Hache Netherite 🪓</li>
+        <li>🟣 <b>ÉPIQUE :</b> Bâton Onde de Choc, Arcs spéciaux, Flèches Poison/Instant/Slowness, 16 Ender Pearls</li>
+        <li>🔵 <b>RARE :</b> Arc Répulsif, Bâton Knockback 2, Spyglass, 6 Ender Pearls</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-6 title-text">⚠️ ATTENTION</h3>
+      <p>Les kits et items du shop peuvent être modifiés à tout moment (prix, suppression, ajout) !</p>
+
+      <h3 class="text-2xl font-semibold mt-6 title-text">🔮 À VENIR</h3>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Kits achetables</li>
+        <li>Quêtes spéciales (récompenses exclusives)</li>
+        <li>Lootbox surprises</li>
+        <li>... et bien plus 👀</li>
+      </ul>
+
+      <p class="mt-6 text-lg">💬 Rejoins la communauté, farm tes Rackzz, domine l’arène, et deviens le plus riche guerrier du serveur !</p>
+    </div>
+  </main>
+
+  <script>
+    const colors = ["#4ade80", "#22c55e", "#16a34a"];
+    const particlesContainer = document.getElementById("particles");
+
+    function createParticle() {
+      const p = document.createElement("div");
+      p.className = "particle";
+      p.style.background = colors[Math.floor(Math.random()*colors.length)];
+      p.style.left = Math.random() * window.innerWidth + "px";
+      p.style.top = "-10px";
+      p.style.width = p.style.height = Math.random() * 6 + 4 + "px";
+      p.style.animationDuration = (Math.random()*3 + 3) + "s";
+      particlesContainer.appendChild(p);
+      setTimeout(() => p.remove(), 6000);
+    }
+    setInterval(createParticle, 300);
+  </script>
+</body>
+</html>
